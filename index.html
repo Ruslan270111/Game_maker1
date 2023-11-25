@@ -31,13 +31,16 @@
             }
 
             canvas {
-                image-rendering: optimizeSpeed;
-                -webkit-interpolation-mode: nearest-neighbor;
-                -ms-touch-action: none;
-                touch-action: none;
-                margin: 0px;
-                padding: 0px;
-                border: 0px;
+            display: block; /* Убедимся, что canvas отображается как блочный элемент */
+            width: 100%; /* Установим ширину на 100% от родительского контейнера */
+            height: 100vh; /* Установим высоту на 100% высоты видимой области (viewport) */
+            image-rendering: optimizeSpeed;
+            -webkit-interpolation-mode: nearest-neighbor;
+            -ms-touch-action: none;
+            touch-action: none;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
             }
             :-webkit-full-screen #canvas {
                 width: 100%;
@@ -96,7 +99,7 @@
             
 
             <!-- Create the canvas element the game draws to -->
-            <canvas id="canvas" width="1000" height="1000" style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">
+            <canvas id="canvas">
                 <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
         </div>
